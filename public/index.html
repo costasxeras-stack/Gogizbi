@@ -462,9 +462,18 @@
       </button>
       <div class="vmeta"><small>${esc(tag)}</small><h3>${esc(title)}</h3></div>
     </article>`).join("");
-  document.querySelectorAll(".pick").forEach(a => a.addEventListener("click", () => {
-    const s = document.getElementById("plan"); if (s) s.value = a.dataset.plan;
-  }));
+  // Payment links per plan. Paste each plan's Stripe Payment Link or PayPal
+  // subscription link here; while a link is empty the button opens the early-access form.
+  const PAY = {
+    "Starter (€5/month)": "",
+    "Pro (€9/month)": "",
+    "Agency (€19/month)": ""
+  };
+  document.querySelectorAll(".pick").forEach(a => {
+    const url = PAY[a.dataset.plan];
+    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = a.textContent.replace("Choose", "Subscribe to"); }
+    else a.addEventListener("click", () => { const s = document.getElementById("plan"); if (s) s.value = a.dataset.plan; });
+  });
   grid.addEventListener("click", e => {
     const b = e.target.closest(".vthumb"); if (!b || b.querySelector("iframe")) return;
     const f = document.createElement("iframe");
