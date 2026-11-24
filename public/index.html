@@ -318,7 +318,7 @@
   <div class="wrap center">
     <div class="kicker">simple pricing</div>
     <h2>Pick your plan</h2>
-    <p class="sub">Low monthly prices, cancel anytime. Founding members lock in these prices at launch.</p>
+    <p class="sub">Low monthly prices. Subscribe in a minute, cancel anytime.</p>
     <div class="plans">
       <div class="plan">
         <h3>Starter</h3>
@@ -357,7 +357,7 @@
         <a href="#join" class="btn alt pick" data-plan="Agency (€19/month)">Choose Agency</a>
       </div>
     </div>
-    <p class="note" style="margin-top:22px">Prices in EUR. Choosing a plan reserves your spot — no payment until launch.</p>
+    <p class="note" style="margin-top:22px">Prices in EUR. Secure checkout by Stripe — card, Apple Pay, Google Pay and more. Cancel anytime.</p>
   </div>
 </section>
 
@@ -435,7 +435,7 @@
       <details><summary>What can I use the videos for?</summary><p>Website explainers, social posts, ads, sales pages, online courses, presentations — anywhere you'd use video.</p></details>
       <details><summary>When does GoGizbi! launch?</summary><p>We're moving to a new platform now. Join early access and you'll be the first to hear when accounts open.</p></details>
       <details><summary>I was a GoGizbi! customer before. What happens to my account?</summary><p>Sign up above and choose "An existing GoGizbi! customer" — we'll contact you directly about getting you back in.</p></details>
-      <details><summary>How much does it cost?</summary><p>Plans start at €5 per month — see the pricing above. Early-access members lock in these founding prices at launch, and you can cancel anytime.</p></details>
+      <details><summary>How much does it cost?</summary><p>Plans start at €5 per month — see the pricing above. You pay securely through Stripe and can cancel anytime.</p></details>
     </div>
   </div>
 </section>
@@ -465,9 +465,9 @@
   // Payment links per plan. Paste each plan's Stripe Payment Link or PayPal
   // subscription link here; while a link is empty the button opens the early-access form.
   const PAY = {
-    "Starter (€5/month)": "",
-    "Pro (€9/month)": "",
-    "Agency (€19/month)": ""
+    "Starter (€5/month)": "https://buy.stripe.com/8x2fZicUF6kL4OR4sw57W00",
+    "Pro (€9/month)": "https://buy.stripe.com/fZudRa1bXcJ9dlnf7a57W01",
+    "Agency (€19/month)": "https://buy.stripe.com/9B6aEYg6R38z9577EI57W02"
   };
   document.querySelectorAll(".pick").forEach(a => {
     const url = PAY[a.dataset.plan];
