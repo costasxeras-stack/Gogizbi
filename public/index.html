@@ -10,6 +10,7 @@
 <link rel="canonical" href="https://gogizbi.com/">
 <link rel="alternate" hreflang="en" href="https://gogizbi.com/">
 <link rel="alternate" hreflang="pl" href="https://gogizbi.com/pl/">
+<link rel="alternate" hreflang="el" href="https://gogizbi.com/el/">
 <link rel="alternate" hreflang="x-default" href="https://gogizbi.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gogizbi.com/">
@@ -190,10 +191,11 @@
   .legal-links a,footer a{color:var(--muted)}
   .legal-links a:hover{color:var(--coral)}
   footer .wrap{align-items:center;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.92rem}
+  .nav-links a{white-space:nowrap}
+  @media (max-width:1180px){.nav-links a:not(.btn){display:none}}
   @media (max-width:900px){
     .hero .wrap,.signup{grid-template-columns:1fr}
     .steps,.styles,.features{grid-template-columns:1fr 1fr}
-    .nav-links a:not(.btn){display:none}
     .signup{padding:40px 26px}
   }
   @media (max-width:600px){
@@ -223,6 +225,7 @@
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
       <a href="pl/" hreflang="pl" lang="pl" title="Polski">PL</a>
+      <a href="el/" hreflang="el" lang="el" title="Ελληνικά">EL</a>
       <a href="#pricing" class="btn small">Get started</a>
     </div>
   </div>
@@ -518,6 +521,7 @@
     <a href="refunds.html">Refunds &amp; cancellation</a>
     <a href="legal.html">Legal notice</a>
     <a href="pl/" hreflang="pl" lang="pl">Polski</a>
+    <a href="el/" hreflang="el" lang="el">Ελληνικά</a>
   </div>
 </footer>
 
