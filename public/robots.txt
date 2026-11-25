@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /welcome.html
+Disallow: /thanks.html
+
+Sitemap: https://gogizbi.com/sitemap.xml

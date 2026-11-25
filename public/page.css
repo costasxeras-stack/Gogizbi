@@ -1,0 +1,35 @@
+/* Shared styles for GoGizbi! text pages (legal pages, welcome page) */
+:root{--ink:#161616;--paper:#FFFDF7;--sun:#FFD23F;--coral:#FF6B4A;--sky:#3A86FF;--mint:#2EC4B6;--muted:#5a5a5a;--line:#e9e4d6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;
+  background-image:radial-gradient(#e6dfcc 1px,transparent 1px);background-size:22px 22px}
+a{color:var(--ink)}
+a:hover{color:var(--coral)}
+.top{border-bottom:2px solid var(--ink);background:rgba(255,253,247,.94)}
+.top .in{max-width:860px;margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+.logo span{font-family:Caveat,cursive;font-size:1.8rem;color:var(--coral);margin-left:-4px}
+.back{font-weight:600;text-decoration:none}
+main{max-width:860px;margin:40px auto 60px;padding:0 22px}
+.doc{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:clamp(24px,5vw,52px);box-shadow:8px 8px 0 var(--sun)}
+.kicker{font-family:Caveat,cursive;font-size:1.6rem;color:var(--coral);font-weight:700}
+h1{font-size:clamp(1.9rem,4vw,2.6rem);letter-spacing:-.03em;line-height:1.1;margin:4px 0 10px}
+.updated{color:var(--muted);font-size:.92rem;margin-bottom:26px}
+h2{font-size:1.2rem;margin:30px 0 8px;letter-spacing:-.01em}
+p,li{font-size:1rem;max-width:70ch}
+p+p{margin-top:10px}
+ul,ol{margin:8px 0 0 22px}
+li{margin:5px 0}
+.box{background:#FFF7D6;border:2px dashed #e8c94a;border-radius:12px;padding:16px 18px;margin:18px 0}
+dl{display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:8px 18px;margin-top:10px}
+dt{font-weight:600}
+dd{color:var(--ink)}
+.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--coral);margin:6px 10px 0 0}
+.btn:hover{color:#fff;transform:translate(-2px,-2px)}
+.btn.alt{background:var(--sun);color:var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.steps{list-style:none;margin:18px 0 0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:12px 0 12px 54px;border-top:1px dashed var(--line);max-width:none}
+.steps li:before{content:counter(s);position:absolute;left:0;top:10px;width:36px;height:36px;border-radius:50%;background:var(--sun);border:2px solid var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center}
+footer{max-width:860px;margin:0 auto 40px;padding:0 22px;color:var(--muted);font-size:.88rem;display:flex;flex-wrap:wrap;gap:6px 20px}
+footer a{color:var(--muted)}
+@media (max-width:560px){dl{grid-template-columns:1fr}dt{margin-top:8px}}

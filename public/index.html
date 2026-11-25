@@ -7,10 +7,21 @@
 <meta name="description" content="GoGizbi! turns your script into hand-drawn doodle videos — whiteboard, blackboard and glassboard styles, voiceovers and music, no design skills needed. Plans from €5/month.">
 <meta property="og:title" content="GoGizbi! — Doodle videos that sell, made in minutes">
 <meta property="og:description" content="Turn a script into a hand-drawn doodle video in minutes. Plans from €5/month.">
+<link rel="canonical" href="https://gogizbi.com/">
+<link rel="alternate" hreflang="en" href="https://gogizbi.com/">
+<link rel="alternate" hreflang="pl" href="https://gogizbi.com/pl/">
+<link rel="alternate" hreflang="x-default" href="https://gogizbi.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gogizbi.com/">
+<meta property="og:site_name" content="GoGizbi!">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://gogizbi.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gogizbi.com/og-image.png">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts.css">
 <style>
   :root{
     --ink:#161616; --paper:#FFFDF7; --sun:#FFD23F; --coral:#FF6B4A; --sky:#3A86FF; --mint:#2EC4B6;
@@ -149,6 +160,13 @@
   .plan li:before{content:"✓";position:absolute;left:2px;color:var(--mint);font-weight:800}
   .plan .btn{text-align:center}
   @media (max-width:900px){.plans{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}.plan.pop{transform:none}}
+  .billing{display:inline-flex;gap:4px;margin-top:26px;background:#fff;border:2px solid var(--ink);border-radius:999px;padding:4px}
+  .bill{font:inherit;font-weight:600;border:0;background:none;padding:9px 18px;border-radius:999px;cursor:pointer;color:var(--ink);min-height:40px}
+  .bill em{font-style:normal;font-size:.78rem;background:var(--mint);color:#fff;padding:2px 8px;border-radius:999px;margin-left:4px}
+  .bill.on{background:var(--ink);color:#fff}
+  .bill:focus-visible{outline:3px solid var(--sun)}
+  .plan .per{color:var(--muted);font-size:.88rem;margin:-8px 0 14px}
+  .note a{color:inherit}
   /* team */
   .team{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-top:44px}
   .person{width:240px}
@@ -168,6 +186,9 @@
   .social{display:flex;gap:18px}
   .social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-weight:600;color:var(--ink)}
   .social a:hover{color:var(--coral)}
+  .legal-links{margin-top:16px;justify-content:flex-start!important;gap:6px 22px!important;font-size:.86rem!important}
+  .legal-links a,footer a{color:var(--muted)}
+  .legal-links a:hover{color:var(--coral)}
   footer .wrap{align-items:center;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:var(--muted);font-size:.92rem}
   @media (max-width:900px){
     .hero .wrap,.signup{grid-template-columns:1fr}
@@ -201,6 +222,7 @@
       <a href="#team">Team</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <a href="pl/" hreflang="pl" lang="pl" title="Polski">PL</a>
       <a href="#pricing" class="btn small">Get started</a>
     </div>
   </div>
@@ -319,46 +341,53 @@
   <div class="wrap center">
     <div class="kicker">simple pricing</div>
     <h2>Pick your plan</h2>
-    <p class="sub">Low monthly prices. Subscribe in a minute, cancel anytime.</p>
+    <p class="sub">Low prices. Subscribe in a minute, cancel anytime.</p>
+    <div class="billing" role="group" aria-label="Billing period">
+      <button type="button" class="bill on" data-period="m" aria-pressed="true">Monthly</button>
+      <button type="button" class="bill" data-period="y" aria-pressed="false">Yearly <em>2 months free</em></button>
+    </div>
     <div class="plans">
       <div class="plan">
         <h3>Starter</h3>
         <p class="for">For trying doodle videos out</p>
-        <div class="price"><b>€5</b><span>/month</span></div>
+        <div class="price"><b data-m="€5" data-y="€50">€5</b><span data-m="/month" data-y="/year">/month</span></div>
+        <p class="per" data-m="Billed monthly" data-y="≈ €4.17/month, billed yearly">Billed monthly</p>
         <ul>
           <li>Whiteboard style</li>
           <li>Characters &amp; icons library</li>
           <li>Text-to-speech voiceovers</li>
           <li>Export &amp; share your videos</li>
         </ul>
-        <a href="#contact" class="btn alt pick" data-plan="Starter (€5/month)">Choose Starter</a>
+        <a href="https://buy.stripe.com/8x2fZicUF6kL4OR4sw57W00" class="btn alt pick" data-m="https://buy.stripe.com/8x2fZicUF6kL4OR4sw57W00" data-y="https://buy.stripe.com/7sY5kE8EpfVldln3os57W03">Subscribe to Starter</a>
       </div>
       <div class="plan pop">
         <div class="badge">Most popular</div>
         <h3>Pro</h3>
         <p class="for">For businesses and creators</p>
-        <div class="price"><b>€9</b><span>/month</span></div>
+        <div class="price"><b data-m="€9" data-y="€90">€9</b><span data-m="/month" data-y="/year">/month</span></div>
+        <p class="per" data-m="Billed monthly" data-y="≈ €7.50/month, billed yearly">Billed monthly</p>
         <ul>
           <li>Everything in Starter</li>
           <li>Blackboard &amp; glassboard styles</li>
           <li>Background music</li>
           <li>Your own images &amp; logo</li>
         </ul>
-        <a href="#contact" class="btn pick" data-plan="Pro (€9/month)">Choose Pro</a>
+        <a href="https://buy.stripe.com/fZudRa1bXcJ9dlnf7a57W01" class="btn pick" data-m="https://buy.stripe.com/fZudRa1bXcJ9dlnf7a57W01" data-y="https://buy.stripe.com/14A7sMcUF24v5SVf7a57W04">Subscribe to Pro</a>
       </div>
       <div class="plan">
         <h3>Agency</h3>
         <p class="for">For making videos for clients</p>
-        <div class="price"><b>€19</b><span>/month</span></div>
+        <div class="price"><b data-m="€19" data-y="€190">€19</b><span data-m="/month" data-y="/year">/month</span></div>
+        <p class="per" data-m="Billed monthly" data-y="≈ €15.83/month, billed yearly">Billed monthly</p>
         <ul>
           <li>Everything in Pro</li>
           <li>Commercial use for client videos</li>
           <li>Priority support</li>
         </ul>
-        <a href="#contact" class="btn alt pick" data-plan="Agency (€19/month)">Choose Agency</a>
+        <a href="https://buy.stripe.com/9B6aEYg6R38z9577EI57W02" class="btn alt pick" data-m="https://buy.stripe.com/9B6aEYg6R38z9577EI57W02" data-y="https://buy.stripe.com/7sYeVe7AlgZp0yBcZ257W05">Subscribe to Agency</a>
       </div>
     </div>
-    <p class="note" style="margin-top:22px">Prices in EUR. Secure checkout by Stripe — card, Apple Pay, Google Pay and more. Cancel anytime.</p>
+    <p class="note" style="margin-top:22px">Prices in EUR. Secure checkout by Stripe. Cancel anytime from <a href="https://billing.stripe.com/p/login/8x2fZicUF6kL4OR4sw57W00">your subscription page</a>. See our <a href="refunds.html">refund &amp; cancellation policy</a>.</p>
   </div>
 </section>
 
@@ -452,18 +481,15 @@
       </button>
       <div class="vmeta"><small>${esc(tag)}</small><h3>${esc(title)}</h3></div>
     </article>`).join("");
-  // Payment links per plan. Paste each plan's Stripe Payment Link or PayPal
-  // subscription link here; while a link is empty the button opens the contact form.
-  const PAY = {
-    "Starter (€5/month)": "https://buy.stripe.com/8x2fZicUF6kL4OR4sw57W00",
-    "Pro (€9/month)": "https://buy.stripe.com/fZudRa1bXcJ9dlnf7a57W01",
-    "Agency (€19/month)": "https://buy.stripe.com/9B6aEYg6R38z9577EI57W02"
+  // Monthly / yearly billing toggle: swaps prices and Stripe payment links.
+  const setPeriod = p => {
+    document.querySelectorAll(".bill").forEach(x => { const on = x.dataset.period === p; x.classList.toggle("on", on); x.setAttribute("aria-pressed", on); });
+    document.querySelectorAll("#pricing [data-m]").forEach(el => {
+      const v = el.dataset[p];
+      if (el.tagName === "A") el.href = v; else el.textContent = v;
+    });
   };
-  document.querySelectorAll(".pick").forEach(a => {
-    const url = PAY[a.dataset.plan];
-    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; a.textContent = a.textContent.replace("Choose", "Subscribe to"); }
-    else a.addEventListener("click", () => { const t = document.getElementById("topic"); if (t) t.value = "Question about plans"; });
-  });
+  document.querySelectorAll(".bill").forEach(x => x.addEventListener("click", () => setPeriod(x.dataset.period)));
   grid.addEventListener("click", e => {
     const b = e.target.closest(".vthumb"); if (!b || b.querySelector("iframe")) return;
     const f = document.createElement("iframe");
@@ -483,9 +509,18 @@
       <a href="https://www.linkedin.com/company/gogizbi/" target="_blank" rel="noopener" aria-label="GoGizbi! on LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
       <a href="https://www.youtube.com/@gogizbi1954" target="_blank" rel="noopener" aria-label="GoGizbi! on YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>YouTube</a>
     </span>
-    <span>© <script>document.write(new Date().getFullYear())</script> GoGizbi!</span>
+    <span>© <script>document.write(new Date().getFullYear())</script> GoGizbi! · <a href="mailto:hello@gogizbi.com">hello@gogizbi.com</a></span>
+  </div>
+  <div class="wrap legal-links">
+    <a href="https://billing.stripe.com/p/login/8x2fZicUF6kL4OR4sw57W00">Manage my subscription</a>
+    <a href="terms.html">Terms of service</a>
+    <a href="privacy.html">Privacy policy</a>
+    <a href="refunds.html">Refunds &amp; cancellation</a>
+    <a href="legal.html">Legal notice</a>
+    <a href="pl/" hreflang="pl" lang="pl">Polski</a>
   </div>
 </footer>
 
+<script data-goatcounter="https://gogizbi.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

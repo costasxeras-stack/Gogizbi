@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Welcome — GoGizbi!</title>
+<meta name="description" content="Welcome to GoGizbi!">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+<header class="top"><div class="in">
+  <a href="./" class="logo" aria-label="GoGizbi! home"><img src="img/logo.png" alt="" width="38" height="38">GoGizbi<span>!</span></a>
+  <a href="./" class="back">← Back to site</a>
+</div></header>
+<main><article class="doc">
+  <div class="kicker">you're in!</div>
+  <h1>Welcome to GoGizbi! 🎉</h1>
+  
+
+  <p id="planline">Your subscription is active. Thank you for choosing GoGizbi!</p>
+  <ol class="steps">
+    <li><b>Check your inbox.</b> Stripe has emailed you a receipt for your payment.</li>
+    <li><b>Get your login.</b> We'll send your GoGizbi! login details from <b>hello@gogizbi.com</b> to the email address you used at checkout. If it hasn't arrived, check your spam folder.</li>
+    <li><b>Make your first video.</b> Paste a script, pick a board style and let GoGizbi! draw it out. Need ideas? Watch our <a href="./#videos">example videos</a>.</li>
+  </ol>
+  <h2>Need anything?</h2>
+  <p>Questions, or something not working? Email <a href="mailto:hello@gogizbi.com">hello@gogizbi.com</a> and we'll help. You can manage or cancel your subscription anytime.</p>
+  <p style="margin-top:20px"><a class="btn" href="./">Back to GoGizbi!</a><a class="btn alt" href="https://billing.stripe.com/p/login/8x2fZicUF6kL4OR4sw57W00">Manage my subscription</a></p>
+  <script>
+  {
+    const names = {"starter":"Starter (monthly)","pro":"Pro (monthly)","agency":"Agency (monthly)","starter-yearly":"Starter (yearly)","pro-yearly":"Pro (yearly)","agency-yearly":"Agency (yearly)"};
+    const p = new URLSearchParams(location.search).get("plan");
+    if (names[p]) document.getElementById("planline").textContent = "Your " + names[p] + " subscription is active. Thank you for choosing GoGizbi!";
+  }
+  </script>
+
+</article></main>
+<footer>
+  <a href="https://billing.stripe.com/p/login/8x2fZicUF6kL4OR4sw57W00">Manage my subscription</a>
+  <a href="terms.html">Terms of service</a>
+  <a href="privacy.html">Privacy policy</a>
+  <a href="refunds.html">Refunds &amp; cancellation</a>
+  <a href="legal.html">Legal notice</a>
+  <a href="mailto:hello@gogizbi.com">hello@gogizbi.com</a>
+</footer>
+<script data-goatcounter="https://gogizbi.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
